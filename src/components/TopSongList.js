@@ -1,5 +1,6 @@
 import React from "react";
 import TopSongDetail from "../components/TopSongDetail";
+import './TopSongList.css';
 
 const TopSongList = ({songs}) => {
     const songNodes = songs.map(song => {

@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from "react";
 import TopSongList from "../components/TopSongList";
+import './TopSongContainer.css';
 
 class TopSongContainer extends Component {
 
@@ -11,7 +12,6 @@ class TopSongContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("IN COMPN DID MOUNT");
     const url = 'https://itunes.apple.com/gb/rss/topsongs/limit=20/json';
     const request = new XMLHttpRequest();
     request.open('GET', url);
@@ -30,10 +30,11 @@ class TopSongContainer extends Component {
   render(){
     return (
       <Fragment>
+      <div className="song-container">
         <h2> Top 20 UK Songs</h2>
         {console.log(this.state.songs)}
         <TopSongList songs={this.state.songs}/>
-
+      </div>
       </Fragment>
     );
   }
